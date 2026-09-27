@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>Հայերեն բայեր · Армянские глаголы</title>
+
+<!-- iOS "Add to Home Screen" support: makes this behave like an installed app -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Հայ. բայեր">
+<meta name="theme-color" content="#9C2B2B">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Armenian:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --parchment:#F4EAD2;
+    --parchment-dark:#EADFC0;
+    --ink:#2C1E12;
+    --ink-soft:#5B4A38;
+    --pomegranate:#9C2B2B;
+    --pomegranate-dark:#7A2020;
+    --apricot:#DB8C2B;
+    --indigo:#2E3A59;
+    --gold:#AD8A3F;
+    --green:#3D7A46;
+    --red:#B23B3B;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--parchment);
+    background-image:
+      radial-gradient(circle at 15% 10%, rgba(156,43,43,0.05), transparent 40%),
+      radial-gradient(circle at 85% 90%, rgba(46,58,89,0.05), transparent 40%);
+    font-family:'Noto Sans Armenian','Noto Sans',sans-serif;
+    color:var(--ink);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    padding:calc(20px + env(safe-area-inset-top)) calc(14px + env(safe-area-inset-right)) calc(50px + env(safe-area-inset-bottom)) calc(14px + env(safe-area-inset-left));
+  }
+  .app{ width:100%; max-width:560px; }
+  .band{
+    height:10px;
+    background-image: repeating-linear-gradient(45deg, var(--pomegranate) 0 8px, var(--apricot) 8px 16px, var(--indigo) 16px 24px);
+    border-radius:6px;
+    margin-bottom:16px;
+    opacity:0.9;
+  }
+
+  .scorebar{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    margin-bottom:18px;
+  }
+  .score-label{ font-size:13px; color:var(--ink-soft); font-weight:600; }
+  .score-value{
+    font-size:24px;
+    font-weight:700;
+    color:var(--pomegranate-dark);
+    min-width:34px;
+    text-align:center;
+    transition:transform .18s ease;
+  }
+  .score-value.pulse-good{ color:var(--green); animation:pop .4s ease; }
+  .score-value.pulse-bad{ color:var(--red); animation:shake .4s ease; }
+  @keyframes pop{ 0%{transform:scale(1);} 40%{transform:scale(1.5);} 100%{transform:scale(1);} }
+  @keyframes shake{ 0%,100%{transform:translateX(0);} 25%{transform:translateX(-5px);} 75%{transform:translateX(5px);} }
+
+  .question-card{
+    text-align:center;
+    margin-bottom:16px;
+  }
+  .question-eyebrow{ font-size:12px; color:var(--ink-soft); margin-bottom:8px; font-weight:600; }
+  .question-text{
+    font-size:22px;
+    font-weight:700;
+    line-height:1.4;
+    background:#fffaf0;
+    border:2px solid var(--gold);
+    border-radius:14px;
+    padding:14px 18px;
+    display:inline-block;
+  }
+  .question-text::before{ content:"«"; color:var(--pomegranate-dark); }
+  .question-text::after{ content:"»"; color:var(--pomegranate-dark); }
+
+  .answer-line{
+    min-height:54px;
+    background:#fffaf0;
+    border:2px dashed var(--gold);
+    border-radius:14px;
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:10px 12px;
+    margin-bottom:18px;
+  }
+  .answer-line.empty::before{
+    content:"Собери предложение из слов ниже";
+    color:var(--ink-soft);
+    font-size:13.5px;
+    font-style:italic;
+  }
+  .answer-chip{
+    padding:8px 14px;
+    border-radius:20px;
+    background:var(--indigo);
+    color:#fff;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+  }
+
+  .bank-label{ font-size:12.5px; color:var(--ink-soft); margin-bottom:8px; font-weight:600; }
+  .bank{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:18px;
+  }
+  .bank-chip{
+    padding:8px 14px;
+    border-radius:20px;
+    border:1.5px solid var(--gold);
+    background:#fff8ea;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    color:var(--ink);
+  }
+  .bank-chip:active{ background:var(--apricot); }
+  .bank-chip.used{ visibility:hidden; }
+
+  .controls{ display:flex; gap:8px; margin-bottom:16px; flex-wrap:wrap; }
+  .controls .action{ font-size:14px; padding:12px 8px; }
+  button.action{
+    flex:1;
+    padding:13px;
+    border:none;
+    border-radius:12px;
+    font-size:15.5px;
+    font-weight:700;
+    cursor:pointer;
+    color:#fff;
+  }
+  .btn-check{ background:var(--pomegranate); }
+  .btn-check:disabled{ background:#c9b79a; cursor:not-allowed; }
+  .btn-clear{ background:var(--parchment-dark); color:var(--ink-soft); }
+  .btn-hint{ background:var(--apricot); color:var(--ink); }
+  .hint-box{
+    text-align:center;
+    background:#fff2da;
+    border:1.5px dashed var(--apricot);
+    border-radius:12px;
+    padding:12px 14px;
+    margin-bottom:16px;
+    font-size:18px;
+    font-weight:700;
+    color:var(--pomegranate-dark);
+  }
+  .hint-box .hint-translit{
+    display:block;
+    font-size:13px;
+    font-weight:400;
+    font-style:italic;
+    color:var(--ink-soft);
+    margin-top:4px;
+  }
+  .say-btn{
+    display:inline-block;
+    cursor:pointer;
+    font-size:18px;
+    margin-right:4px;
+    user-select:none;
+  }
+  .say-btn:active{ transform:scale(0.9); }
+  .btn-next{ background:var(--indigo); display:none; }
+
+  .feedback{
+    text-align:center;
+    border-radius:14px;
+    padding:14px 16px;
+    margin-bottom:16px;
+    display:none;
+  }
+  .feedback.ok{ background:#e4f2e6; color:var(--green); display:block; }
+  .feedback.bad{ background:#f6e3e1; color:var(--red); display:block; }
+  .feedback .fb-title{ font-size:16px; font-weight:700; margin-bottom:4px; }
+  .feedback .fb-correct{ font-size:16px; font-weight:700; color:var(--pomegranate-dark); margin-top:6px; }
+  .feedback .fb-translit{ font-size:13px; color:var(--ink-soft); font-style:italic; margin-top:2px; }
+
+  footer{
+    text-align:center;
+    font-size:12px;
+    color:var(--ink-soft);
+    margin-top:20px;
+    line-height:1.6;
+  }
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="band"></div>
+
+  <div class="scorebar">
+    <span class="score-label">Счёт:</span>
+    <span class="score-value" id="scoreValue">0</span>
+  </div>
+
+  <div class="question-card">
+    <div class="question-eyebrow">Составь на армянском эту фразу:</div>
+    <div class="question-text" id="questionText"></div>
+  </div>
+
+  <div class="answer-line empty" id="answerLine"></div>
+
+  <div class="bank-label">Слова (без подсказок) — собери фразу на армянском</div>
+  <div class="bank" id="bank"></div>
+
+  <div class="controls">
+    <button class="action btn-clear" id="btnClear">Очистить</button>
+    <button class="action btn-hint" id="btnHint">Подсказка 💡</button>
+    <button class="action btn-check" id="btnCheck">Готово</button>
+  </div>
+
+  <div class="hint-box" id="hintBox" style="display:none;"></div>
+
+  <div class="feedback" id="feedback"></div>
+
+  <button class="action btn-next" id="btnNext" style="width:100%;">Следующее предложение →</button>
+
+  <footer>
+    Собери фразу из готовых слов: местоимение + форма глагола (+ дополнение).<br>
+    Среди слов иногда встречается «մի» — армянский неопределённый артикль, нужен не всегда.<br>
+    Значок 🔊 озвучивает фразу — качество произношения зависит от голосов, установленных в устройстве/браузере.
+  </footer>
+</div>
+
+<script>
+// ---------- data ----------
+const pronouns = [
+  {arm:'ես', ru:'я'},
+  {arm:'դու', ru:'ты'},
+  {arm:'նա', ru:'он / она'},
+  {arm:'մենք', ru:'мы'},
+  {arm:'դուք', ru:'вы'},
+  {arm:'նրանք', ru:'они'}
+];
+
+const presentAux = ['եմ','ես','է','ենք','եք','են'];
+const pastAux    = ['էի','էիր','էր','էինք','էիք','էին'];
+const futureA    = ['ամ','աս','ա','անք','աք','ան'];
+const futureE    = ['եմ','ես','ի','ենք','եք','են'];
+
+const verbs = [
+  {inf:'կարդալ', ru:'читать',   objects:[['գիրք','книгу'],['նամակ','письмо'],['թերթ','газету']]},
+  {inf:'գնալ',   ru:'идти / ехать', objects:[['տուն','домой'],['դպրոց','в школу'],['խանութ','в магазин']]},
+  {inf:'խաղալ',  ru:'играть',  objects:[['ֆուտբոլ','в футбол'],['շախմատ','в шахматы'],['խաղեր','в игры']]},
+  {inf:'գրել',   ru:'писать',  objects:[['նամակ','письмо'],['գիրք','книгу'],['բանաստեղծություն','стихотворение']]},
+  {inf:'խոսել',  ru:'говорить',objects:[['հայերեն','по-армянски'],['ռուսերեն','по-русски'],['ճշմարտություն','правду']]},
+  {inf:'ուտել',  ru:'есть',    objects:[['հաց','хлеб'],['միրգ','фрукт'],['շոկոլադ','шоколад']]},
+  {inf:'խմել',   ru:'пить',    objects:[['ջուր','воду'],['թեյ','чай'],['սուրճ','кофе']]},
+  {inf:'տեսնել', ru:'видеть',  objects:[['ֆիլմ','фильм'],['ընկեր','друга'],['արև','солнце']]},
+  {inf:'անել',   ru:'делать',  objects:[['տնային աշխատանք','домашнее задание'],['սխալ','ошибку'],['ընտրություն','выбор']]},
+  {inf:'սիրել',  ru:'любить',  objects:[['երաժշտություն','музыку'],['հայրենիք','родину'],['քեզ','тебя']]},
+  {inf:'ասել',   ru:'сказать', objects:[['ճշմարտություն','правду'],['գաղտնիք','секрет'],['շնորհակալություն','спасибо']]},
+  {inf:'պատասխանել', ru:'отвечать', objects:[['հարց','на вопрос'],['նամակ','на письмо'],['ուսուցչին','учителю']]},
+  {inf:'հարցնել', ru:'спрашивать', objects:[['հարց','вопрос'],['ուղղություն','дорогу'],['ժամը','который час']]},
+  {inf:'սկսել', ru:'начинать', objects:[['աշխատանք','работу'],['դաս','урок'],['խաղ','игру']]},
+  {inf:'բերել', ru:'приносить', objects:[['ջուր','воду'],['գիրք','книгу'],['նվեր','подарок']]},
+  {inf:'գնել', ru:'покупать', objects:[['հաց','хлеб'],['տոմս','билет'],['հագուստ','одежду']]},
+  {inf:'փակել', ru:'закрывать', objects:[['դուռը','дверь'],['պատուհանը','окно'],['գիրքը','книгу']]},
+  {inf:'գալ', ru:'приходить', irregularPresent:true, objects:[['տուն','домой'],['դպրոց','в школу'],['ժամանակին','вовремя']]},
+  {inf:'զգալ', ru:'чувствовать', objects:[['ցավ','боль'],['ուրախություն','радость'],['հոգնածություն','усталость']]},
+  {inf:'գտնել', ru:'находить', objects:[['բանալի','ключ'],['գումար','деньги'],['լուծում','решение']]},
+  {inf:'ավարտել', ru:'заканчивать', objects:[['աշխատանք','работу'],['դպրոց','школу'],['գիրք','книгу']]},
+  {inf:'թռչել', ru:'летать', objects:[['ինքնաթիռով','на самолёте'],['երկինքում','в небе'],['հեռու','далеко']]},
+  {inf:'մոռանալ', ru:'забывать', objects:[['բանալի','ключ'],['անուն','имя'],['հանդիպում','о встрече']]},
+  {inf:'ստանալ', ru:'получать', objects:[['նամակ','письмо'],['նվեր','подарок'],['գումար','деньги']]},
+  {inf:'տալ', ru:'давать', irregularPresent:true, objects:[['գիրք','книгу'],['փող','деньги'],['խորհուրդ','совет']]},
+  {inf:'քայլել', ru:'ходить', objects:[['զբոսայգում','в парке'],['փողոցում','по улице'],['դպրոց','в школу']]},
+  {inf:'աճել', ru:'расти', objects:[['արագ','быстро'],['ամեն օր','каждый день'],['բարձր','высоким']]},
+  {inf:'լսել', ru:'слышать', objects:[['երաժշտություն','музыку'],['ձայն','голос'],['նորություն','новость']]},
+  {inf:'օգնել', ru:'помогать', objects:[['ընկերոջը','другу'],['մորը','маме'],['դասերին','с уроками']]},
+  {inf:'իմանալ', ru:'знать', objects:[['ճշմարտություն','правду'],['պատասխան','ответ'],['նորություն','новость']]},
+  {inf:'թողնել', ru:'оставлять', objects:[['նամակ','записку'],['բանալի','ключ'],['հաղորդագրություն','сообщение']]},
+  {inf:'ապրել', ru:'жить', objects:[['Երևանում','в Ереване'],['գյուղում','в деревне'],['արտասահմանում','за границей']]},
+  {inf:'նայել', ru:'смотреть', objects:[['ֆիլմ','фильм'],['հեռուստացույց','телевизор'],['նկար','картину']]},
+  {inf:'կորցնել', ru:'терять', objects:[['բանալի','ключ'],['ժամանակ','время'],['համբերություն','терпение']]},
+  {inf:'հանդիպել', ru:'встречать', objects:[['ընկերոջը','друга'],['ուսուցչին','учителя'],['նոր մարդկանց','новых людей']]},
+  {inf:'բացել', ru:'открывать', objects:[['դուռը','дверь'],['պատուհանը','окно'],['արկղը','коробку']]},
+  {inf:'վճարել', ru:'платить', objects:[['հաշիվ','по счёту'],['վարձ','за аренду'],['տոմս','за билет']]},
+  {inf:'դնել', ru:'класть', objects:[['գիրք','книгу'],['սեղանին','на стол'],['պայուսակում','в сумку']]},
+  {inf:'վազել', ru:'бежать', objects:[['արագ','быстро'],['զբոսայգում','в парке'],['տուն','домой']]},
+  {inf:'տեղադրել', ru:'устанавливать', objects:[['ծրագիր','программу'],['պատուհան','окно'],['տեսախցիկ','камеру']]},
+  {inf:'ցուցադրել', ru:'показывать', objects:[['նկար','картину'],['ֆիլմ','фильм'],['փաստաթուղթ','документ']]},
+  {inf:'նստել', ru:'сидеть', objects:[['աթոռին','на стуле'],['գետնին','на земле'],['դասարանում','в классе']]},
+  {inf:'քնել', ru:'спать', objects:[['վաղ','рано'],['երկար','долго'],['հատակին','на полу']]},
+  {inf:'սովորել', ru:'учиться', objects:[['հայերեն','армянскому'],['դպրոցում','в школе'],['երաժշտություն','музыке']]},
+  {inf:'վերցնել', ru:'брать', objects:[['գիրք','книгу'],['գումար','деньги'],['հեռախոս','телефон']]},
+  {inf:'պատմել', ru:'рассказывать', objects:[['պատմություն','историю'],['գաղտնիք','секрет'],['անեկդոտ','анекдот']]},
+  {inf:'մտածել', ru:'думать', objects:[['ապագայի մասին','о будущем'],['քո մասին','о тебе'],['լուծման մասին','о решении']]},
+  {inf:'ճանապարհորդել', ru:'путешествовать', objects:[['Եվրոպայում','по Европе'],['նավով','на корабле'],['միայնակ','в одиночку']]},
+  {inf:'թեքվել', ru:'поворачивать', objects:[['աջ','направо'],['ձախ','налево'],['անկյունում','за углом']]},
+  {inf:'հասկանալ', ru:'понимать', objects:[['հարցը','вопрос'],['դասը','урок'],['իրավիճակը','ситуацию']]},
+  {inf:'աշխատել', ru:'работать', objects:[['գրասենյակում','в офисе'],['տանը','дома'],['գիշերով','по ночам']]}
+];
+
+const tenseNames = {present:'наст. время', past:'прош. время', future:'буд. время'};
+
+const ruConj = {
+  'читать':   {present:['читаю','читаешь','читает','читаем','читаете','читают'], past:['читал(а)','читал(а)','читал(а)','читали','читали','читали'], future:['буду читать','будешь читать','будет читать','будем читать','будете читать','будут читать']},
+  'идти / ехать': {present:['иду','идёшь','идёт','идём','идёте','идут'], past:['шёл/шла','шёл/шла','шёл/шла','шли','шли','шли'], future:['пойду','пойдёшь','пойдёт','пойдём','пойдёте','пойдут']},
+  'играть':   {present:['играю','играешь','играет','играем','играете','играют'], past:['играл(а)','играл(а)','играл(а)','играли','играли','играли'], future:['буду играть','будешь играть','будет играть','будем играть','будете играть','будут играть']},
+  'писать':   {present:['пишу','пишешь','пишет','пишем','пишете','пишут'], past:['писал(а)','писал(а)','писал(а)','писали','писали','писали'], future:['буду писать','будешь писать','будет писать','будем писать','будете писать','будут писать']},
+  'говорить': {present:['говорю','говоришь','говорит','говорим','говорите','говорят'], past:['говорил(а)','говорил(а)','говорил(а)','говорили','говорили','говорили'], future:['буду говорить','будешь говорить','будет говорить','будем говорить','будете говорить','будут говорить']},
+  'есть':     {present:['ем','ешь','ест','едим','едите','едят'], past:['ел(а)','ел(а)','ел(а)','ели','ели','ели'], future:['буду есть','будешь есть','будет есть','будем есть','будете есть','будут есть']},
+  'пить':     {present:['пью','пьёшь','пьёт','пьём','пьёте','пьют'], past:['пил(а)','пил(а)','пил(а)','пили','пили','пили'], future:['буду пить','будешь пить','будет пить','будем пить','будете пить','будут пить']},
+  'видеть':   {present:['вижу','видишь','видит','видим','видите','видят'], past:['видел(а)','видел(а)','видел(а)','видели','видели','видели'], future:['буду видеть','будешь видеть','будет видеть','будем видеть','будете видеть','будут видеть']},
+  'делать':   {present:['делаю','делаешь','делает','делаем','делаете','делают'], past:['делал(а)','делал(а)','делал(а)','делали','делали','делали'], future:['буду делать','будешь делать','будет делать','будем делать','будете делать','будут делать']},
+  'любить':   {present:['люблю','любишь','любит','любим','любите','любят'], past:['любил(а)','любил(а)','любил(а)','любили','любили','любили'], future:['буду любить','будешь любить','будет любить','будем любить','будете любить','будут любить']},
+  'сказать':  {present:['говорю','говоришь','говорит','говорим','говорите','говорят'], past:['сказал(а)','сказал(а)','сказал(а)','сказали','сказали','сказали'], future:['скажу','скажешь','скажет','скажем','скажете','скажут']},
+  'отвечать': {present:['отвечаю','отвечаешь','отвечает','отвечаем','отвечаете','отвечают'], past:['отвечал(а)','отвечал(а)','отвечал(а)','отвечали','отвечали','отвечали'], future:['буду отвечать','будешь отвечать','будет отвечать','будем отвечать','будете отвечать','будут отвечать']},
+  'спрашивать': {present:['спрашиваю','спрашиваешь','спрашивает','спрашиваем','спрашиваете','спрашивают'], past:['спрашивал(а)','спрашивал(а)','спрашивал(а)','спрашивали','спрашивали','спрашивали'], future:['буду спрашивать','будешь спрашивать','будет спрашивать','будем спрашивать','будете спрашивать','будут спрашивать']},
+  'начинать': {present:['начинаю','начинаешь','начинает','начинаем','начинаете','начинают'], past:['начинал(а)','начинал(а)','начинал(а)','начинали','начинали','начинали'], future:['буду начинать','будешь начинать','будет начинать','будем начинать','будете начинать','будут начинать']},
+  'приносить': {present:['приношу','приносишь','приносит','приносим','приносите','приносят'], past:['приносил(а)','приносил(а)','приносил(а)','приносили','приносили','приносили'], future:['буду приносить','будешь приносить','будет приносить','будем приносить','будете приносить','будут приносить']},
+  'покупать': {present:['покупаю','покупаешь','покупает','покупаем','покупаете','покупают'], past:['покупал(а)','покупал(а)','покупал(а)','покупали','покупали','покупали'], future:['буду покупать','будешь покупать','будет покупать','будем покупать','будете покупать','будут покупать']},
+  'закрывать': {present:['закрываю','закрываешь','закрывает','закрываем','закрываете','закрывают'], past:['закрывал(а)','закрывал(а)','закрывал(а)','закрывали','закрывали','закрывали'], future:['буду закрывать','будешь закрывать','будет закрывать','будем закрывать','будете закрывать','будут закрывать']},
+  'приходить': {present:['прихожу','приходишь','приходит','приходим','приходите','приходят'], past:['приходил(а)','приходил(а)','приходил(а)','приходили','приходили','приходили'], future:['буду приходить','будешь приходить','будет приходить','будем приходить','будете приходить','будут приходить']},
+  'чувствовать': {present:['чувствую','чувствуешь','чувствует','чувствуем','чувствуете','чувствуют'], past:['чувствовал(а)','чувствовал(а)','чувствовал(а)','чувствовали','чувствовали','чувствовали'], future:['буду чувствовать','будешь чувствовать','будет чувствовать','будем чувствовать','будете чувствовать','будут чувствовать']},
+  'находить': {present:['нахожу','находишь','находит','находим','находите','находят'], past:['находил(а)','находил(а)','находил(а)','находили','находили','находили'], future:['буду находить','будешь находить','будет находить','будем находить','будете находить','будут находить']},
+  'заканчивать': {present:['заканчиваю','заканчиваешь','заканчивает','заканчиваем','заканчиваете','заканчивают'], past:['заканчивал(а)','заканчивал(а)','заканчивал(а)','заканчивали','заканчивали','заканчивали'], future:['буду заканчивать','будешь заканчивать','будет заканчивать','будем заканчивать','будете заканчивать','будут заканчивать']},
+  'летать': {present:['летаю','летаешь','летает','летаем','летаете','летают'], past:['летал(а)','летал(а)','летал(а)','летали','летали','летали'], future:['буду летать','будешь летать','будет летать','будем летать','будете летать','будут летать']},
+  'забывать': {present:['забываю','забываешь','забывает','забываем','забываете','забывают'], past:['забывал(а)','забывал(а)','забывал(а)','забывали','забывали','забывали'], future:['буду забывать','будешь забывать','будет забывать','будем забывать','будете забывать','будут забывать']},
+  'получать': {present:['получаю','получаешь','получает','получаем','получаете','получают'], past:['получал(а)','получал(а)','получал(а)','получали','получали','получали'], future:['буду получать','будешь получать','будет получать','будем получать','будете получать','будут получать']},
+  'давать': {present:['даю','даёшь','даёт','даём','даёте','дают'], past:['давал(а)','давал(а)','давал(а)','давали','давали','давали'], future:['буду давать','будешь давать','будет давать','будем давать','будете давать','будут давать']},
+  'ходить': {present:['хожу','ходишь','ходит','ходим','ходите','ходят'], past:['ходил(а)','ходил(а)','ходил(а)','ходили','ходили','ходили'], future:['буду ходить','будешь ходить','будет ходить','будем ходить','будете ходить','будут ходить']},
+  'расти': {present:['расту','растёшь','растёт','растём','растёте','растут'], past:['рос/росла','рос/росла','рос/росла','росли','росли','росли'], future:['буду расти','будешь расти','будет расти','будем расти','будете расти','будут расти']},
+  'слышать': {present:['слышу','слышишь','слышит','слышим','слышите','слышат'], past:['слышал(а)','слышал(а)','слышал(а)','слышали','слышали','слышали'], future:['буду слышать','будешь слышать','будет слышать','будем слышать','будете слышать','будут слышать']},
+  'помогать': {present:['помогаю','помогаешь','помогает','помогаем','помогаете','помогают'], past:['помогал(а)','помогал(а)','помогал(а)','помогали','помогали','помогали'], future:['буду помогать','будешь помогать','будет помогать','будем помогать','будете помогать','будут помогать']},
+  'знать': {present:['знаю','знаешь','знает','знаем','знаете','знают'], past:['знал(а)','знал(а)','знал(а)','знали','знали','знали'], future:['буду знать','будешь знать','будет знать','будем знать','будете знать','будут знать']},
+  'оставлять': {present:['оставляю','оставляешь','оставляет','оставляем','оставляете','оставляют'], past:['оставлял(а)','оставлял(а)','оставлял(а)','оставляли','оставляли','оставляли'], future:['буду оставлять','будешь оставлять','будет оставлять','будем оставлять','будете оставлять','будут оставлять']},
+  'жить': {present:['живу','живёшь','живёт','живём','живёте','живут'], past:['жил(а)','жил(а)','жил(а)','жили','жили','жили'], future:['буду жить','будешь жить','будет жить','будем жить','будете жить','будут жить']},
+  'смотреть': {present:['смотрю','смотришь','смотрит','смотрим','смотрите','смотрят'], past:['смотрел(а)','смотрел(а)','смотрел(а)','смотрели','смотрели','смотрели'], future:['буду смотреть','будешь смотреть','будет смотреть','будем смотреть','будете смотреть','будут смотреть']},
+  'терять': {present:['теряю','теряешь','теряет','теряем','теряете','теряют'], past:['терял(а)','терял(а)','терял(а)','теряли','теряли','теряли'], future:['буду терять','будешь терять','будет терять','будем терять','будете терять','будут терять']},
+  'встречать': {present:['встречаю','встречаешь','встречает','встречаем','встречаете','встречают'], past:['встречал(а)','встречал(а)','встречал(а)','встречали','встречали','встречали'], future:['буду встречать','будешь встречать','будет встречать','будем встречать','будете встречать','будут встречать']},
+  'открывать': {present:['открываю','открываешь','открывает','открываем','открываете','открывают'], past:['открывал(а)','открывал(а)','открывал(а)','открывали','открывали','открывали'], future:['буду открывать','будешь открывать','будет открывать','будем открывать','будете открывать','будут открывать']},
+  'платить': {present:['плачу','платишь','платит','платим','платите','платят'], past:['платил(а)','платил(а)','платил(а)','платили','платили','платили'], future:['буду платить','будешь платить','будет платить','будем платить','будете платить','будут платить']},
+  'класть': {present:['кладу','кладёшь','кладёт','кладём','кладёте','кладут'], past:['клал(а)','клал(а)','клал(а)','клали','клали','клали'], future:['буду класть','будешь класть','будет класть','будем класть','будете класть','будут класть']},
+  'бежать': {present:['бегу','бежишь','бежит','бежим','бежите','бегут'], past:['бежал(а)','бежал(а)','бежал(а)','бежали','бежали','бежали'], future:['буду бежать','будешь бежать','будет бежать','будем бежать','будете бежать','будут бежать']},
+  'устанавливать': {present:['устанавливаю','устанавливаешь','устанавливает','устанавливаем','устанавливаете','устанавливают'], past:['устанавливал(а)','устанавливал(а)','устанавливал(а)','устанавливали','устанавливали','устанавливали'], future:['буду устанавливать','будешь устанавливать','будет устанавливать','будем устанавливать','будете устанавливать','будут устанавливать']},
+  'показывать': {present:['показываю','показываешь','показывает','показываем','показываете','показывают'], past:['показывал(а)','показывал(а)','показывал(а)','показывали','показывали','показывали'], future:['буду показывать','будешь показывать','будет показывать','будем показывать','будете показывать','будут показывать']},
+  'сидеть': {present:['сижу','сидишь','сидит','сидим','сидите','сидят'], past:['сидел(а)','сидел(а)','сидел(а)','сидели','сидели','сидели'], future:['буду сидеть','будешь сидеть','будет сидеть','будем сидеть','будете сидеть','будут сидеть']},
+  'спать': {present:['сплю','спишь','спит','спим','спите','спят'], past:['спал(а)','спал(а)','спал(а)','спали','спали','спали'], future:['буду спать','будешь спать','будет спать','будем спать','будете спать','будут спать']},
+  'учиться': {present:['учусь','учишься','учится','учимся','учитесь','учатся'], past:['учился/училась','учился/училась','учился/училась','учились','учились','учились'], future:['буду учиться','будешь учиться','будет учиться','будем учиться','будете учиться','будут учиться']},
+  'брать': {present:['беру','берёшь','берёт','берём','берёте','берут'], past:['брал(а)','брал(а)','брал(а)','брали','брали','брали'], future:['буду брать','будешь брать','будет брать','будем брать','будете брать','будут брать']},
+  'рассказывать': {present:['рассказываю','рассказываешь','рассказывает','рассказываем','рассказываете','рассказывают'], past:['рассказывал(а)','рассказывал(а)','рассказывал(а)','рассказывали','рассказывали','рассказывали'], future:['буду рассказывать','будешь рассказывать','будет рассказывать','будем рассказывать','будете рассказывать','будут рассказывать']},
+  'думать': {present:['думаю','думаешь','думает','думаем','думаете','думают'], past:['думал(а)','думал(а)','думал(а)','думали','думали','думали'], future:['буду думать','будешь думать','будет думать','будем думать','будете думать','будут думать']},
+  'путешествовать': {present:['путешествую','путешествуешь','путешествует','путешествуем','путешествуете','путешествуют'], past:['путешествовал(а)','путешествовал(а)','путешествовал(а)','путешествовали','путешествовали','путешествовали'], future:['буду путешествовать','будешь путешествовать','будет путешествовать','будем путешествовать','будете путешествовать','будут путешествовать']},
+  'поворачивать': {present:['поворачиваю','поворачиваешь','поворачивает','поворачиваем','поворачиваете','поворачивают'], past:['поворачивал(а)','поворачивал(а)','поворачивал(а)','поворачивали','поворачивали','поворачивали'], future:['буду поворачивать','будешь поворачивать','будет поворачивать','будем поворачивать','будете поворачивать','будут поворачивать']},
+  'понимать': {present:['понимаю','понимаешь','понимает','понимаем','понимаете','понимают'], past:['понимал(а)','понимал(а)','понимал(а)','понимали','понимали','понимали'], future:['буду понимать','будешь понимать','будет понимать','будем понимать','будете понимать','будут понимать']},
+  'работать': {present:['работаю','работаешь','работает','работаем','работаете','работают'], past:['работал(а)','работал(а)','работал(а)','работали','работали','работали'], future:['буду работать','будешь работать','будет работать','будем работать','будете работать','будут работать']}
+};
+
+// simplified Armenian -> Latin transliteration
+const translitMap = {
+  'ա':'a','բ':'b','գ':'g','դ':'d','ե':'e','զ':'z','է':'e','ը':'y','թ':'t',
+  'ժ':'zh','ի':'i','լ':'l','խ':'kh','ծ':'ts','կ':'k','հ':'h','ձ':'dz','ղ':'gh',
+  'ճ':'ch','մ':'m','յ':'y','ն':'n','շ':'sh','ո':'o','չ':'ch','պ':'p','ջ':'j',
+  'ռ':'r','ս':'s','վ':'v','տ':'t','ր':'r','ց':'ts','փ':'p','ք':'k','օ':'o',
+  'ֆ':'f','և':'ev'
+};
+function translit(word){
+  const withDigraph = word.replace(/ու/g, '\u0001');
+  let out = '';
+  for(const ch of withDigraph){
+    if(ch === '\u0001'){ out += 'u'; continue; }
+    out += translitMap[ch] !== undefined ? translitMap[ch] : ch;
+  }
+  return out;
+}
+
+function verbRoot(inf){ return inf.slice(0, -2); }
+function verbClass(inf){ return inf.endsWith('ալ') ? 'a' : 'e'; }
+
+function conjugateTokens(verb, tenseKey, idx){
+  // returns array of tokens (1 or 2 words) for this verb+tense+person
+  const root = verbRoot(verb.inf);
+  const cls = verbClass(verb.inf);
+  // a few short verbs (գալ, տալ) form present/past irregularly: infinitive + իս, not stem + ում
+  const presentPastStem = verb.irregularPresent ? (verb.inf + 'իս') : (root + 'ում');
+  if(tenseKey === 'present') return [presentPastStem, presentAux[idx]];
+  if(tenseKey === 'past')    return [presentPastStem, pastAux[idx]];
+  const suf = cls === 'a' ? futureA[idx] : futureE[idx];
+  return ['կ' + root + suf];
+}
+
+function shuffle(arr){
+  const a = arr.slice();
+  for(let i=a.length-1;i>0;i--){
+    const j = Math.floor(Math.random()*(i+1));
+    [a[i],a[j]] = [a[j],a[i]];
+  }
+  return a;
+}
+function sample(arr, n){ return shuffle(arr).slice(0,n); }
+function uid(){ return Math.random().toString(36).slice(2,9); }
+
+// ---------- state ----------
+let score = 0;
+let current = null; // {correctTokens: [...strings], answered: bool}
+let answerChips = []; // ordered list of {id, text}
+let bankChips = [];   // list of {id, text, used}
+
+function newQuestion(){
+  const verb = verbs[Math.floor(Math.random()*verbs.length)];
+  const tenseKeys = ['present','past','future'];
+  const tenseKey = tenseKeys[Math.floor(Math.random()*3)];
+  const pIdx = Math.floor(Math.random()*6);
+  const includeObject = Math.random() < 0.75;
+  const objIdx = includeObject ? Math.floor(Math.random()*verb.objects.length) : null;
+
+  const pron = pronouns[pIdx];
+  const verbTokens = conjugateTokens(verb, tenseKey, pIdx);
+
+  const correctTokens = [pron.arm, ...verbTokens];
+  if(objIdx !== null) correctTokens.push(verb.objects[objIdx][0]);
+
+  // Russian question text
+  let ruSentence = pron.ru.charAt(0).toUpperCase() + pron.ru.slice(1) + ' ' + ruConj[verb.ru][tenseKey][pIdx];
+  if(objIdx !== null) ruSentence += ' ' + verb.objects[objIdx][1];
+
+  // build bank
+  const bank = [];
+  pronouns.forEach(p => bank.push(p.arm));
+
+  if(tenseKey === 'future'){
+    // correct future form + 2 decoy future forms from other pronouns/verbs
+    bank.push(verbTokens[0]);
+    const otherVerbs = sample(verbs.filter(v=>v.inf!==verb.inf), 2);
+    otherVerbs.forEach(ov => {
+      const decoyIdx = Math.floor(Math.random()*6);
+      bank.push(conjugateTokens(ov, 'future', decoyIdx)[0]);
+    });
+  } else {
+    // stem decoys
+    bank.push(verbTokens[0]);
+    const otherVerbs = sample(verbs.filter(v=>v.inf!==verb.inf), 2);
+    otherVerbs.forEach(ov => bank.push(verbRoot(ov.inf) + 'ում'));
+    // aux decoys: correct + 3 others (from same tense list)
+    const auxList = tenseKey === 'present' ? presentAux : pastAux;
+    const auxDecoys = sample(auxList.filter(a=>a!==verbTokens[1]), 3);
+    bank.push(verbTokens[1], ...auxDecoys);
+  }
+
+  if(objIdx !== null){
+    verb.objects.forEach(o => bank.push(o[0]));
+  }
+
+  bank.push('մի'); // article trap, always available
+
+  const bankUnique = shuffle(bank).map(text => ({id: uid(), text, used:false}));
+
+  current = { correctTokens, ruSentence, verb, tenseKey, pIdx, answered:false };
+  answerChips = [];
+  bankChips = bankUnique;
+
+  renderQuestion();
+}
+
+function renderQuestion(){
+  document.getElementById('questionText').textContent = current.ruSentence;
+  document.getElementById('feedback').className = 'feedback';
+  document.getElementById('feedback').style.display = 'none';
+  document.getElementById('btnNext').style.display = 'none';
+  document.getElementById('btnCheck').disabled = false;
+  const hintBox = document.getElementById('hintBox');
+  hintBox.style.display = 'none';
+  hintBox.innerHTML = '';
+  renderAnswerLine();
+  renderBank();
+}
+
+function renderAnswerLine(){
+  const line = document.getElementById('answerLine');
+  line.innerHTML = '';
+  line.classList.toggle('empty', answerChips.length === 0);
+  answerChips.forEach(chip => {
+    const el = document.createElement('div');
+    el.className = 'answer-chip';
+    el.textContent = chip.text;
+    el.onclick = () => {
+      if(current.answered) return;
+      answerChips = answerChips.filter(c => c.id !== chip.id);
+      const bc = bankChips.find(b => b.id === chip.id);
+      if(bc) bc.used = false;
+      renderAnswerLine();
+      renderBank();
+    };
+    line.appendChild(el);
+  });
+}
+
+function renderBank(){
+  const bankEl = document.getElementById('bank');
+  bankEl.innerHTML = '';
+  bankChips.forEach(chip => {
+    const el = document.createElement('div');
+    el.className = 'bank-chip' + (chip.used ? ' used' : '');
+    el.textContent = chip.text;
+    el.onclick = () => {
+      if(current.answered || chip.used) return;
+      chip.used = true;
+      answerChips.push({id: chip.id, text: chip.text});
+      renderAnswerLine();
+      renderBank();
+    };
+    bankEl.appendChild(el);
+  });
+}
+
+document.getElementById('btnClear').onclick = () => {
+  if(current.answered) return;
+  answerChips = [];
+  bankChips.forEach(b => b.used = false);
+  renderAnswerLine();
+  renderBank();
+};
+
+document.getElementById('btnHint').onclick = () => {
+  const hintBox = document.getElementById('hintBox');
+  const showing = hintBox.style.display !== 'none';
+  if(showing){
+    hintBox.style.display = 'none';
+  } else {
+    const phrase = current.correctTokens.join(' ');
+    hintBox.innerHTML = '<span class="say-btn" id="hintSayBtn">🔊</span> ' + phrase +
+      '<span class="hint-translit">' + translit(phrase) + '</span>';
+    hintBox.style.display = 'block';
+    document.getElementById('hintSayBtn').onclick = (e) => {
+      e.stopPropagation();
+      speakArmenian(phrase);
+    };
+  }
+};
+
+function speakArmenian(text){
+  try{
+    if(!('speechSynthesis' in window)) return;
+    const synth = window.speechSynthesis;
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'hy-AM';
+    u.rate = 0.9;
+    const pickVoice = () => {
+      const voices = synth.getVoices();
+      const hy = voices.find(v => v.lang && v.lang.toLowerCase().startsWith('hy'));
+      if(hy) u.voice = hy;
+    };
+    pickVoice();
+    if(!u.voice && synth.getVoices().length === 0){
+      // voice list not loaded yet in some browsers — try once it arrives
+      synth.onvoiceschanged = () => { pickVoice(); };
+    }
+    synth.cancel();
+    synth.speak(u);
+  }catch(e){ /* speech not available, ignore */ }
+}
+
+function bumpScore(good){
+  score = good ? score + 1 : Math.max(0, score - 1);
+  const el = document.getElementById('scoreValue');
+  el.textContent = score;
+  el.classList.remove('pulse-good','pulse-bad');
+  void el.offsetWidth; // restart animation
+  el.classList.add(good ? 'pulse-good' : 'pulse-bad');
+}
+
+document.getElementById('btnCheck').onclick = () => {
+  if(current.answered) return;
+  const given = answerChips.map(c => c.text).join(' ').trim();
+  const correct = current.correctTokens.join(' ').trim();
+  const isCorrect = given === correct;
+  current.answered = true;
+  document.getElementById('btnCheck').disabled = true;
+  document.getElementById('btnNext').style.display = 'block';
+
+  const fb = document.getElementById('feedback');
+  if(isCorrect){
+    fb.className = 'feedback ok';
+    fb.innerHTML = '<div class="fb-title">Правильно! ✓</div>' +
+      '<div class="fb-correct"><span class="say-btn" id="fbSayBtn">🔊</span> ' + correct + '</div>' +
+      '<div class="fb-translit">' + translit(correct) + '</div>';
+    fb.style.display = 'block';
+    bumpScore(true);
+    speakArmenian(correct);
+  } else {
+    fb.className = 'feedback bad';
+    fb.innerHTML = '<div class="fb-title">Неправильно ✕</div>' +
+      (given ? ('<div style="font-size:14px;">Твой вариант: ' + given + '</div>') : '') +
+      '<div class="fb-correct"><span class="say-btn" id="fbSayBtn">🔊</span> Правильный ответ: ' + correct + '</div>' +
+      '<div class="fb-translit">' + translit(correct) + '</div>';
+    fb.style.display = 'block';
+    bumpScore(false);
+  }
+  document.getElementById('fbSayBtn').onclick = (e) => {
+    e.stopPropagation();
+    speakArmenian(correct);
+  };
+};
+
+document.getElementById('btnNext').onclick = () => newQuestion();
+
+newQuestion();
+</script>
+</body>
+</html>
