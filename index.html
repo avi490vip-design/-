@@ -52,26 +52,33 @@
     opacity:0.9;
   }
 
-  .scorebar{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:10px;
-    margin-bottom:18px;
+  .history{
+    display:grid;
+    grid-template-columns:repeat(20,1fr);
+    gap:3px;
+    margin:22px auto 0;
+    max-width:100%;
   }
-  .score-label{ font-size:13px; color:var(--ink-soft); font-weight:600; }
-  .score-value{
-    font-size:24px;
-    font-weight:700;
-    color:var(--pomegranate-dark);
-    min-width:34px;
-    text-align:center;
-    transition:transform .18s ease;
+  .history .cell{
+    aspect-ratio:1/1;
+    border-radius:2px;
+    background:var(--parchment-dark);
   }
-  .score-value.pulse-good{ color:var(--green); animation:pop .4s ease; }
-  .score-value.pulse-bad{ color:var(--red); animation:shake .4s ease; }
-  @keyframes pop{ 0%{transform:scale(1);} 40%{transform:scale(1.5);} 100%{transform:scale(1);} }
-  @keyframes shake{ 0%,100%{transform:translateX(0);} 25%{transform:translateX(-5px);} 75%{transform:translateX(5px);} }
+  .history .cell.good{ background:var(--green); }
+  .history .cell.bad{ background:var(--red); }
+  .help-box{
+    background:#fffaf0;
+    border:1.5px solid var(--gold);
+    border-radius:12px;
+    padding:12px 14px;
+    margin-bottom:16px;
+    font-size:14.5px;
+    line-height:1.5;
+  }
+  .help-box .help-row{ margin:6px 0; }
+  .help-box .help-tense{ font-weight:700; color:var(--indigo); }
+  .help-box .help-arm{ font-weight:700; color:var(--pomegranate-dark); }
+  .help-box .help-tr{ font-style:italic; color:var(--ink-soft); }
 
   .question-card{
     text-align:center;
@@ -156,6 +163,7 @@
   .btn-check:disabled{ background:#c9b79a; cursor:not-allowed; }
   .btn-clear{ background:var(--parchment-dark); color:var(--ink-soft); }
   .btn-hint{ background:var(--apricot); color:var(--ink); }
+  .btn-help{ background:var(--indigo); color:#fff; }
   .hint-box{
     text-align:center;
     background:#fff2da;
@@ -211,11 +219,6 @@
 <div class="app">
   <div class="band"></div>
 
-  <div class="scorebar">
-    <span class="score-label">Счёт:</span>
-    <span class="score-value" id="scoreValue">0</span>
-  </div>
-
   <div class="question-card">
     <div class="question-eyebrow">Составь на армянском эту фразу:</div>
     <div class="question-text" id="questionText"></div>
@@ -228,15 +231,24 @@
 
   <div class="controls">
     <button class="action btn-clear" id="btnClear">Очистить</button>
-    <button class="action btn-hint" id="btnHint">Подсказка 💡</button>
+    <button class="action btn-hint" id="btnHint">Ответ</button>
+    <button class="action btn-help" id="btnHelp">Помощь</button>
     <button class="action btn-check" id="btnCheck">Готово</button>
   </div>
 
   <div class="hint-box" id="hintBox" style="display:none;"></div>
 
+  <div class="help-box" id="helpBox" style="display:none;">
+    <div class="help-row"><span class="help-tense">Настоящее:</span> <span class="help-arm">կարդում եմ</span> → <span class="help-tr">kardum em</span> → я читаю</div>
+    <div class="help-row"><span class="help-tense">Прошедшее:</span> <span class="help-arm">կարդում էի</span> → <span class="help-tr">kardum ei</span> → я читал</div>
+    <div class="help-row"><span class="help-tense">Будущее:</span> <span class="help-arm">կկարդամ</span> → <span class="help-tr">kkardam</span> → я буду читать</div>
+  </div>
+
   <div class="feedback" id="feedback"></div>
 
   <button class="action btn-next" id="btnNext" style="width:100%;">Следующее предложение →</button>
+
+  <div class="history" id="history"></div>
 
   <footer>
     Собери фразу из готовых слов: местоимение + форма глагола (+ дополнение).<br>
@@ -416,7 +428,8 @@ function sample(arr, n){ return shuffle(arr).slice(0,n); }
 function uid(){ return Math.random().toString(36).slice(2,9); }
 
 // ---------- state ----------
-let score = 0;
+const HISTORY_SIZE = 100;
+let history = []; // array of booleans, most recent answers (max 100)
 let current = null; // {correctTokens: [...strings], answered: bool}
 let answerChips = []; // ordered list of {id, text}
 let bankChips = [];   // list of {id, text, used}
@@ -575,13 +588,20 @@ function speakArmenian(text){
   }catch(e){ /* speech not available, ignore */ }
 }
 
-function bumpScore(good){
-  score = good ? score + 1 : Math.max(0, score - 1);
-  const el = document.getElementById('scoreValue');
-  el.textContent = score;
-  el.classList.remove('pulse-good','pulse-bad');
-  void el.offsetWidth; // restart animation
-  el.classList.add(good ? 'pulse-good' : 'pulse-bad');
+function renderHistory(){
+  const grid = document.getElementById('history');
+  grid.innerHTML = '';
+  for(let i=0;i<HISTORY_SIZE;i++){
+    const cell = document.createElement('div');
+    cell.className = 'cell' + (i < history.length ? (history[i] ? ' good' : ' bad') : '');
+    grid.appendChild(cell);
+  }
+}
+
+function recordResult(good){
+  if(history.length >= HISTORY_SIZE) history = []; // start a new round of 100
+  history.push(good);
+  renderHistory();
 }
 
 document.getElementById('btnCheck').onclick = () => {
@@ -600,7 +620,7 @@ document.getElementById('btnCheck').onclick = () => {
       '<div class="fb-correct"><span class="say-btn" id="fbSayBtn">🔊</span> ' + correct + '</div>' +
       '<div class="fb-translit">' + translit(correct) + '</div>';
     fb.style.display = 'block';
-    bumpScore(true);
+    recordResult(true);
     speakArmenian(correct);
   } else {
     fb.className = 'feedback bad';
@@ -609,7 +629,7 @@ document.getElementById('btnCheck').onclick = () => {
       '<div class="fb-correct"><span class="say-btn" id="fbSayBtn">🔊</span> Правильный ответ: ' + correct + '</div>' +
       '<div class="fb-translit">' + translit(correct) + '</div>';
     fb.style.display = 'block';
-    bumpScore(false);
+    recordResult(false);
   }
   document.getElementById('fbSayBtn').onclick = (e) => {
     e.stopPropagation();
@@ -617,8 +637,14 @@ document.getElementById('btnCheck').onclick = () => {
   };
 };
 
+document.getElementById('btnHelp').onclick = () => {
+  const box = document.getElementById('helpBox');
+  box.style.display = box.style.display === 'block' ? 'none' : 'block';
+};
+
 document.getElementById('btnNext').onclick = () => newQuestion();
 
+renderHistory();
 newQuestion();
 </script>
 </body>
